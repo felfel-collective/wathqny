@@ -1,6 +1,6 @@
 import { defineConfig, passthroughImageService } from 'astro/config';
 import Wathqny from 'wathqny';
-// import ThemeStyles from 'wathqny/styles?url'
+import ThemeStyles from 'wathqny/styles?url'
 
 // https://astro.build/config
 export default defineConfig({
@@ -16,6 +16,8 @@ export default defineConfig({
   },
   experimental: {
     svg: true,
+    contentIntellisense: true,
+    preserveScriptOrder: true,
   },
   markdown: {
     shikiConfig: {
@@ -74,7 +76,7 @@ export default defineConfig({
             },
           ],
         },
-        // css: ['/injected.css', ThemeStyles],
+        css: ['/injected-styles.css',ThemeStyles],
         // font: '/font/GeistVF.woff2',
       },
     }),

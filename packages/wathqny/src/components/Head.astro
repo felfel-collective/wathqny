@@ -31,7 +31,7 @@ const METAKEYWORDS = keywords ?? [...(config?.keywords || [])]
         type: "font/woff2",
         crossorigin: "anonymous",
       },
-      ...config?.css,
+      ...config?.css ?? [],
     ],
   }}
 >

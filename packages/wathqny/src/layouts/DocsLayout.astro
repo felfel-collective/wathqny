@@ -1,11 +1,11 @@
 ---
-import type { LayoutInterface } from '../types/components'
-import SidebarRefine from '../Aside/Sidebar.astro'
-import Breadcrumbs from '../Navigation/breadcrumbs.astro'
+import type { LayoutInterface } from '../components/types/components'
+import SidebarRefine from '../components/Aside/Sidebar.astro'
+import Breadcrumbs from '../components/Navigation/breadcrumbs.astro'
 import BaseLayout from './BaseLayout.astro'
-import SidebarSvg from '../../assets/icons/sidebar.svg'
+import SidebarSvg from '../assets/icons/sidebar.svg'
 
-import AuthorProfile from '../blog/AuthorProfile.astro'
+import AuthorProfile from '../components/blog/AuthorProfile.astro'
 
 export interface Props extends LayoutInterface {
   heading?: string | undefined

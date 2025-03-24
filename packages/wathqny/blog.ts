@@ -1,4 +1,4 @@
-export { default as BlogLayout } from './src/components/Layout/BlogLayout.astro'
+export { default as BlogLayout } from './src/layouts/BlogLayout.astro'
 export { default as PostPage } from './src/components/blog/PostPage.astro'
 export { default as AuthorProfile } from './src/components/blog/AuthorProfile.astro'
 export { default as PostSummary } from './src/components/blog/PostSummary.astro'

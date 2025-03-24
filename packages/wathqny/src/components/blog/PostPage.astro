@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets'
-import type { CollectionEntry } from 'astro:content'
+import { render, type CollectionEntry } from 'astro:content'
 import config from 'wathqny:config'
 import type { LayoutInterface } from '../types/components'
 import BlogLayout from '../../layouts/BlogLayout.astro'
@@ -13,10 +13,9 @@ export interface Props extends LayoutInterface {
 
 const { postMetaData } = Astro.props as Props
 
-
 const { authors } = postMetaData.data
 
-const { Content } = await postMetaData.render()
+const { Content } = await render(postMetaData)
 
 const { title, keywords, description, OGImage } = postMetaData
 ---

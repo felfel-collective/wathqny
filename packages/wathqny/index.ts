@@ -43,7 +43,7 @@ export default defineTheme({
       imports: [
         {
           'astro:assets': ['Image'],
-          wtqdocs: ['BrowserBlock', 'Code', 'Callout'],
+          wathqny: ['BrowserBlock', 'Code', 'Callout'],
         },
       ],
     }),

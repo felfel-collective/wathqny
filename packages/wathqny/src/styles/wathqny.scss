@@ -1,9 +1,10 @@
-@import "./base/default";
-@import "./components/navbar";
-@import "./components/breadcrumbs";
-@import "./components/sidebar";
-@import "./components/avatar";
-@import "./pages/code";
+@use "sass:meta";
+@use "base/default";
+@use "components/navbar";
+@use "components/breadcrumbs";
+@use "components/sidebar";
+@use "components/avatar";
+@use "pages/code";
 
 #skip {
   position: absolute;
@@ -130,7 +131,7 @@
   }
 }
 
-@import "utils/utils";
+@include meta.load-css("utils/utils");
 
 // @keyframes slideTop {
 //   0% {

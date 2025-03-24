@@ -26,7 +26,7 @@
     },
     "./schema": "./schema.ts",
     "./blog": "./blog.ts",
-    "./styles": "./styles/wathqny.scss",
+    "./styles": "./src/styles/wathqny.scss",
     "./actions": "./actions.ts"
   },
   "dependencies": {

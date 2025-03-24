@@ -31,7 +31,22 @@ export default defineConfig({
     Wathqny({
       config: {
         logo: '/icon.svg',
-
+        home: {
+          logo: {
+            src: '/trademark.webp',
+            alt: 'wathqny logo',
+            width: 500,
+            height: 278,
+          },
+          title: 'wathqny a fast, easy and accessible Astro powered documentation site framework',
+          buttons: [
+            {
+              label: 'Getting started',
+              type: 'primary',
+              href: '/docs/getting-started/overview'
+            }
+          ]
+        },
         siteName: 'wathqny',
         GSVToken: 'uscYyrV8FUN5a4JacVB4TIl0dpHe9lJNGQevQRoLCr4',
         OGImage: {
@@ -76,7 +91,7 @@ export default defineConfig({
             },
           ],
         },
-        css: ['/injected-styles.css',ThemeStyles],
+        css: ['/injected-styles.css', ThemeStyles],
         // font: '/font/GeistVF.woff2',
       },
     }),

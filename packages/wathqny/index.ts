@@ -120,5 +120,25 @@ export default defineTheme({
         z.string(),
       ])
       .optional(),
+    home: z.object({
+      title: z.string().optional(),
+      logo: z.object({
+        src: z.string(),
+        alt: z.string(),
+        height: z.number(),
+        width: z.number(),
+      }).optional(),
+      subtitle: z.string().optional(),
+      description: z.string().optional(),
+      buttons: z.array(
+        z.object({
+          label: z.string(),
+          href: z.string().optional(),
+          type: z.enum(['alt', 'primary']).optional(),
+        })
+      ).length(1),
+    })
   }),
 })
+
+

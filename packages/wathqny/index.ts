@@ -33,7 +33,7 @@ export const shikiBaseTransformers: ShikiTransformer[] = [
   transformerCopyButton({
     visibility: 'always',
     feedbackDuration: 3_000,
-  }),
+  }) as any,
 ]
 
 export default defineTheme({

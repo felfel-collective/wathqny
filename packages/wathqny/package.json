@@ -15,7 +15,11 @@
   "bugs": {
     "url": "https://github.com/spices-solutions/"
   },
-  "keywords": ["astro", "withastro", "astro-integration"],
+  "keywords": [
+    "astro",
+    "withastro",
+    "astro-integration"
+  ],
   "exports": {
     ".": {
       "import": "./index.ts"
@@ -26,18 +30,18 @@
     "./actions": "./actions.ts"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.1.0",
+    "@astrojs/mdx": "^4.2.1",
     "@astrojs/rss": "^4.0.11",
-    "@astrojs/sitemap": "^3.2.1",
+    "@astrojs/sitemap": "^3.3.0",
     "@astrojs/ts-plugin": "^1.10.4",
     "@inox-tools/custom-routing": "^0.3.3",
     "@rehype-pretty/transformers": "^0.13.2",
-    "@shikijs/transformers": "^3.1.0",
-    "@shikijs/types": "^3.1.0",
+    "@shikijs/transformers": "^3.2.1",
+    "@shikijs/types": "^3.2.1",
     "@vite-pwa/assets-generator": "^0.2.6",
     "@vite-pwa/astro": "^0.5.0",
     "@zokki/astro-minify": "^1.1.0",
-    "astro": "^5.4.2",
+    "astro": "^5.5.4",
     "astro-auto-import": "^0.4.4",
     "astro-compressor": "^0.4.1",
     "astro-meta-tags": "^0.3.1",
@@ -46,10 +50,10 @@
     "astro-theme-provider": "^0.7.1",
     "astro-toolkit": "workspace:*",
     "purgecss": "^6.0.0",
-    "sass": "^1.85.1",
+    "sass": "^1.86.0",
     "sharp": "0.32.6",
     "sharp-ico": "^0.1.5",
-    "shiki": "^3.1.0",
+    "shiki": "^3.2.1",
     "typescript": "^5.8.2"
   }
 }

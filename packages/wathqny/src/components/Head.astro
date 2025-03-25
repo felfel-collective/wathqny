@@ -4,7 +4,6 @@ import { PrefetchNative } from 'astro-toolkit/perf'
 import { BaseHead } from 'astro-toolkit/seo'
 
 import type { LayoutInterface } from './types/components'
-import { ClientRouter } from 'astro:transitions'
 
 export interface Props extends LayoutInterface {}
 
@@ -53,5 +52,5 @@ const METAKEYWORDS = keywords ?? [...(config?.keywords || [])]
   </script>
   <meta name="generator" content="wathqny 1.0 Astro powered" />
   <slot />
-  <ClientRouter />
+  <PrefetchNative />
 </BaseHead>

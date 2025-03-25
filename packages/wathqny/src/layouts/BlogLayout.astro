@@ -1,13 +1,12 @@
 ---
 import type { LayoutInterface } from '../components/types/components'
-import BaseLayout from './BaseLayout.astro'
+import { BaseLayout } from 'wathqny:layouts'
 
 export interface Props extends LayoutInterface {}
 
 const { title, keywords, description, OGImage } = Astro.props as Props
 
-// import 'wtqdocs/styles/categories'
-// import 'wtqdocs/styles/blog'
+import 'wathqny:styles'
 ---
 
 <BaseLayout {title} {keywords} {description} {OGImage}>

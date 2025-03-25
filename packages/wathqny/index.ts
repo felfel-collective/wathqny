@@ -63,7 +63,7 @@ export default defineTheme({
       logAllFiles: false,
     }),
     compressor({
-      brotli: true,
+      gzip: false,
     }),
   ],
   schema: z.object({

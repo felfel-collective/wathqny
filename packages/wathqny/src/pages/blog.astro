@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
 import { For } from 'astro-toolkit/flow'
-import BlogLayout from '../layouts/BlogLayout.astro'
+import { BlogLayout } from 'wathqny:layouts'
 import PostSummary from '../components/blog/PostSummary.astro'
 
 const blog = await getCollection('blog')

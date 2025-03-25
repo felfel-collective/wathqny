@@ -15,11 +15,7 @@
   "bugs": {
     "url": "https://github.com/spices-solutions/"
   },
-  "keywords": [
-    "astro",
-    "withastro",
-    "astro-integration"
-  ],
+  "keywords": ["astro", "withastro", "astro-integration"],
   "exports": {
     ".": {
       "import": "./index.ts"
@@ -27,7 +23,7 @@
     "./schema": "./schema.ts",
     "./components": "./components.ts",
     "./blog": "./blog.ts",
-    "./styles": "./src/styles/wathqny.scss",
+    "./styles": "./src/styles/wathqny.css",
     "./actions": "./actions.ts"
   },
   "dependencies": {

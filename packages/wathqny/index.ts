@@ -3,7 +3,6 @@ import { z } from 'astro/zod'
 
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
-import { customRouting } from '@inox-tools/custom-routing'
 import { transformerCopyButton } from '@rehype-pretty/transformers'
 import {
   transformerMetaHighlight,
@@ -14,7 +13,6 @@ import {
   transformerNotationHighlight,
   transformerNotationWordHighlight,
 } from '@shikijs/transformers'
-// import AstroPWA from '@vite-pwa/astro'
 import { minify } from '@zokki/astro-minify'
 import AutoImport from 'astro-auto-import'
 import compressor from 'astro-compressor'

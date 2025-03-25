@@ -2,12 +2,12 @@
 import { getCollection } from 'astro:content'
 import { For } from 'astro-toolkit/flow'
 import { slugify } from 'astro-toolkit/utils'
-import Category from './Category.astro'
-import CollapseButton from './CollapseButton.astro'
+import Category from './Aside/Category.astro'
+import CollapseButton from './Aside/CollapseButton.astro'
 
 import config from 'wathqny:config'
 
-import LinkItem from './LinkItem.astro'
+import LinkItem from './Aside/LinkItem.astro'
 
 const docs = await getCollection('docs')
 
@@ -74,4 +74,4 @@ const currentUrl = `/${
   <CollapseButton />
 </aside>
 
-<script src="./sidebar.ts"></script>
+<script src="./Aside/sidebar.ts"></script>

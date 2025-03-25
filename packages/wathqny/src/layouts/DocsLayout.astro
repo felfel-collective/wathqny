@@ -1,8 +1,8 @@
 ---
 import type { LayoutInterface } from '../components/types/components'
-import SidebarRefine from '../components/Aside/Sidebar.astro'
+import { Sidebar } from 'wathqny:components'
 import Breadcrumbs from '../components/Navigation/breadcrumbs.astro'
-import BaseLayout from './BaseLayout.astro'
+import { BaseLayout } from 'wathqny:layouts'
 import SidebarSvg from '../assets/icons/sidebar.svg'
 
 import AuthorProfile from '../components/blog/AuthorProfile.astro'
@@ -12,11 +12,12 @@ export interface Props extends LayoutInterface {
   authors?: string | undefined
 }
 
-const { title, keywords, description, OGImage, heading, authors } = Astro.props as Props
+const { title, keywords, description, OGImage, heading, authors } =
+  Astro.props as Props
 ---
 
 <BaseLayout {title} {keywords} {description} {OGImage}>
-  <SidebarRefine />
+  <Sidebar />
   <div class="wtq-container">
     <div class="wtq-navigation-container wtq-flex-center">
       <Breadcrumbs />

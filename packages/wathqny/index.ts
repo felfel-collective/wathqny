@@ -17,7 +17,7 @@ import { minify } from '@zokki/astro-minify'
 import AutoImport from 'astro-auto-import'
 import compressor from 'astro-compressor'
 import metaTags from 'astro-meta-tags'
-import purgecss from 'astro-purgecss'
+import {purgecss} from '@zokki/astro-purgecss'
 import type { ShikiTransformer } from 'shiki'
 
 export const shikiBaseTransformers: ShikiTransformer[] = [
@@ -55,17 +55,17 @@ export default defineTheme({
         // transformers: shikiBaseTransformers,
       },
     }),
-    // sitemap(),
-    // purgecss(),
+    sitemap(),
+    purgecss(),
 
-    // metaTags(),
-    // minify({
-    //   logAllFiles: false,
-    // }),
-    // compressor({
-    //   gzip: true,
-    //   brotli: false,
-    // }),
+    metaTags(),
+    minify({
+      logAllFiles: false,
+    }),
+    compressor({
+      gzip: true,
+      brotli: false,
+    }),
   ],
   schema: z.object({
     logo: z.string(),

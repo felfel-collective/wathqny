@@ -25,6 +25,7 @@
       "import": "./index.ts"
     },
     "./schema": "./schema.ts",
+    "./components": "./components.ts",
     "./blog": "./blog.ts",
     "./styles": "./src/styles/wathqny.scss",
     "./actions": "./actions.ts"
@@ -54,6 +55,7 @@
     "sharp": "0.32.6",
     "sharp-ico": "^0.1.5",
     "shiki": "^3.2.1",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.2",
+    "unplugin-auto-import": "^19.1.1"
   }
 }

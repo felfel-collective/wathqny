@@ -1,8 +1,8 @@
 ---
 import { getCollection } from 'astro:content'
+import { BlogLayout } from 'wathqny:layouts'
 import { For } from 'astro-toolkit/flow'
 import { Pagination, PostSummary } from '../../../blog'
-import { BlogLayout } from 'wathqny:layouts'
 
 export async function getStaticPaths({ paginate }) {
   const blog = await getCollection('blog')
@@ -16,7 +16,7 @@ const firstPath = pathname[1]
 ---
 
 
-<style>
+<style is:global>
   .wtq-post-container {
   display: grid;
   grid-template-columns: minmax(0, 692px);

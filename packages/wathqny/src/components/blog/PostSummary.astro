@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets'
-import { formatDate } from 'astro-toolkit/utils'
 import config from 'wathqny:config'
+import { formatDate } from 'astro-toolkit/utils'
 
 type Props = {
   link: string
@@ -19,7 +19,7 @@ const { title, body, date, image, link, index } = Astro.props
 ---
 
 
-<style>
+<style is:global>
   .wtq-card-container-category {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

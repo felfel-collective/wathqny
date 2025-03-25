@@ -1,14 +1,13 @@
 ---
 import { getCollection } from 'astro:content'
-import { For } from 'astro-toolkit/flow'
 import { BlogLayout } from 'wathqny:layouts'
+import { For } from 'astro-toolkit/flow'
 import PostSummary from '../components/blog/PostSummary.astro'
 
 const blog = await getCollection('blog')
-
 ---
 
-<style>
+<style is:global>
   .wtq-post-container {
   display: grid;
   grid-template-columns: minmax(0, 692px);

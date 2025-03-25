@@ -55,16 +55,17 @@ export default defineTheme({
         // transformers: shikiBaseTransformers,
       },
     }),
-    sitemap(),
-    purgecss(),
+    // sitemap(),
+    // purgecss(),
 
-    metaTags(),
-    minify({
-      logAllFiles: false,
-    }),
-    compressor({
-      gzip: false,
-    }),
+    // metaTags(),
+    // minify({
+    //   logAllFiles: false,
+    // }),
+    // compressor({
+    //   gzip: true,
+    //   brotli: false,
+    // }),
   ],
   schema: z.object({
     logo: z.string(),

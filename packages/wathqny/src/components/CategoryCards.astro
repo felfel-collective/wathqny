@@ -1,12 +1,19 @@
 ---
-import { DocsLayout } from 'wathqny:layouts'
-import config from 'wathqny:config'
+import { getCollection } from 'astro:content'
 
-type Props = {
-  title: string
-  description: string
-  heading: string
-}
+const docs = await getCollection('docs')
+
+const category = Astro.url.pathname.split('/')[2]
+
+const filteredDocs = docs.filter(
+  (doc: { data: { category: string | undefined } }) => {
+    return doc.data.category === category
+  },
+)
+
+filteredDocs.sort((a, b) =>
+  (a.data.position ?? 0) > (b.data.position ?? 0) ? 1 : -1,
+)
 ---
 
 <style>
@@ -46,16 +53,17 @@ type Props = {
 
 </style>
 
-<DocsLayout title={"docs"} heading={"categories"}>
-  <div class="wtq-card-container-category">
-    {
-      config?.sidebar?.map((doc: { id: any; label: unknown }) => {
+<div class="wtq-card-container-category">
+  {
+    filteredDocs.map(
+      (doc) => {
         return (
-          <a href={`/docs/${doc.id}/`} class="wtq-card wtq-shadow">
-              <h2 class="wtq-card-title">{doc.label}</h2>
+          <a href={`/docs/${doc.data.link}`}   class="wtq-card wtq-shadow">
+            <h2 class="wtq-card-title">{doc.data.title}</h2>
+            <h3 class="wtq-card-subtitle">{doc.data.description}</h3>
           </a>
         )
-      })
-    }
-  </div>
-</DocsLayout>
+      },
+    )
+  }
+</div>

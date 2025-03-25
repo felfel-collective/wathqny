@@ -15,7 +15,11 @@
   "bugs": {
     "url": "https://github.com/spices-solutions/"
   },
-  "keywords": ["astro", "withastro", "astro-integration"],
+  "keywords": [
+    "astro",
+    "withastro",
+    "astro-integration"
+  ],
   "exports": {
     ".": {
       "import": "./index.ts"
@@ -38,6 +42,7 @@
     "@vite-pwa/assets-generator": "^0.2.6",
     "@vite-pwa/astro": "^0.5.0",
     "@zokki/astro-minify": "^1.1.0",
+    "@zokki/astro-purgecss": "^1.0.4",
     "astro": "^5.5.4",
     "astro-auto-import": "^0.4.4",
     "astro-compressor": "^0.4.1",

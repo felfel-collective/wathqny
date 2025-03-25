@@ -4,7 +4,7 @@ import { render, type CollectionEntry } from 'astro:content'
 import config from 'wathqny:config'
 import type { LayoutInterface } from '../types/components'
 import { BlogLayout } from 'wathqny:layouts'
-import Breadcrumbs from '../Navigation/breadcrumbs.astro'
+import { Breadcrumbs } from 'wathqny:components'
 import AuthorProfile from './AuthorProfile.astro'
 
 export interface Props extends LayoutInterface {

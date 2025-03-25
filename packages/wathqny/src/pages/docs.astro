@@ -1,6 +1,6 @@
 ---
-import { DocsLayout } from 'wathqny:layouts'
 import config from 'wathqny:config'
+import { DocsLayout } from 'wathqny:layouts'
 
 type Props = {
   title: string
@@ -9,7 +9,7 @@ type Props = {
 }
 ---
 
-<style>
+<style is:global>
   .wtq-card-container-category {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

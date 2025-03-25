@@ -1,0 +1,77 @@
+---
+import { Image } from 'astro:assets'
+import { formatDate } from 'astro-toolkit/utils'
+import config from 'wathqny:config'
+
+type Props = {
+  link: string
+  title: string
+  date: Date
+  image: {
+    src: string
+    alt: string
+  }
+  body: string
+  index: number
+}
+
+const { title, body, date, image, link, index } = Astro.props
+---
+
+
+<style>
+  .wtq-card-container-category {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.3rem;
+  margin-top: 30px;
+}
+
+.wtq-card {
+  padding: 25px;
+  background-color: hsl(var(--white));
+  border: 1px solid hsl(var(--light), 0.5);
+  border-radius: calc(var(--radius) * 2);
+}
+.dark .wtq-card {
+  background-color: hsl(var(--light), 0.3);
+  border-color: hsl(var(--lightest));
+}
+.wtq-card:hover {
+  transform: translateY(-5px);
+}
+.wtq-card .wtq-card-title {
+  margin: 0;
+  font-size: var(--font-lg);
+  font-weight: 600;
+  line-height: 1.5;
+  color: hsl(var(--darkest));
+}
+.wtq-card .wtq-card-subtitle {
+  margin: 0;
+  font-size: var(--font-xs);
+  font-weight: 400;
+  color: hsl(var(--dark));
+}
+
+</style>
+
+<a  href={`/blog/${link}/`}>
+  <article class="wtq-card wtq-shadow">
+    <h1 class="wtq-card-title">{title}</h1>
+    <span class="wtq-card-subtitle">
+      <time datetime={date.toISOString()}>
+        {formatDate(date)}
+      </time>
+    </span>
+    <p class="wtq-post-content">{`${body.slice(0, 200)}...`}</p>
+    <Image
+      class="wtq-cover wtq-rounded" 
+      width={640}
+      height={360}
+      loading={index === 0 ? "eager" : "lazy"}
+      src={image?.src ?? config.OGImage?.src }
+      alt={image?.alt ?? config.OGImage?.alt }
+    />
+  </article>
+</a>

@@ -1,0 +1,16 @@
+---
+import type { LayoutInterface } from '../components/types/components'
+import { BaseLayout } from 'wathqny:layouts'
+
+export interface Props extends LayoutInterface {}
+
+const { title, keywords, description, OGImage } = Astro.props as Props
+
+import 'wathqny:styles'
+---
+
+<BaseLayout {title} {keywords} {description} {OGImage}>
+  <div class="wtq-container">
+    <slot />
+  </div>
+</BaseLayout>

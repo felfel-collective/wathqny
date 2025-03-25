@@ -15,6 +15,12 @@
   "bugs": {
     "url": "https://github.com/spices-solutions/wathqny/issues"
   },
+  "files": [
+    "./src/components/*",
+    "./src/seo/*",
+    "./src/utils/*",
+    "./src/*"
+  ],
   "keywords": [
     "spices",
     "code",
@@ -22,7 +28,7 @@
     "kit",
     "toolkit",
     "astro-toolkit",
-    "wtqdocs",
+    "wathqny",
     "astro",
     "withastro",
     "utilities",
@@ -52,8 +58,8 @@
     }
   },
   "devDependencies": {
-    "@astrojs/ts-plugin": "^1.10.2",
-    "astro": "^4.15.4",
-    "typescript": "^5.6.2"
+    "@astrojs/ts-plugin": "^1.10.4",
+    "astro": "^5.5.4",
+    "typescript": "^5.8.2"
   }
 }

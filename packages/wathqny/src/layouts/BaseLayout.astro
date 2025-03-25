@@ -1,0 +1,26 @@
+---
+import type { LayoutInterface } from '../components/types/components'
+import { Head } from 'wathqny:components'
+import { Navbar, SkipLink } from 'wathqny:components'
+import 'wathqny:styles'
+
+export interface Props extends LayoutInterface {}
+
+const { title, keywords, description, OGImage } = Astro.props as Props
+---
+
+<html
+  xml:lang={Astro.currentLocale}
+  lang={Astro.currentLocale}
+  dir={Astro.currentLocale === 'ar' ? 'rtl' : 'ltr'}
+  class="light"
+>
+  <Head {title} {keywords} {description} {OGImage} />
+  <body>
+    <SkipLink />
+    <Navbar />
+    <div class="wtq-page">
+      <slot />
+    </div>
+  </body>
+</html>

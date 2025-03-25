@@ -1,0 +1,143 @@
+---
+import { BaseLayout } from 'wathqny:layouts'
+import { Image } from 'astro:assets'
+import Dynamic from 'astro-toolkit/experimental/Dynamic'
+import config from 'wathqny:config'
+import 'wathqny:styles'
+
+const tag = config?.home?.title ? 'h1' : 'h2'
+const className =
+  config?.home?.title && config?.home?.subtitle ? 'wtq-title' : 'wtq-subtitle'
+---
+
+<BaseLayout>
+  <style>
+    :root {
+      --subtitle-width: 27ch;
+      --accent-color: #21873a;
+      --accent-color-dark: #148730
+    }
+
+    .wtq-btn {
+  box-shadow: 0 6px 4px -5px rgba(0, 0, 0, 0.1882352941);
+  font-size: 1rem;
+  padding: 10px 25px;
+  line-height: 1;
+}
+
+.wtq-alt {
+  background-color: white;
+  border: 1px solid hsl(var(--light));
+}
+.dark .wtq-alt {
+  background-color: hsl(var(--light));
+}
+
+.wtq-theme-color {
+  background-color: var(--accent-color);
+  border: inherit;
+  color: white;
+}
+.dark .wtq-theme-color {
+  background-color: var(--accent-color-dark, --accent-color);
+}
+
+.wtq-page {
+  display: block;
+}
+
+#main-content {
+  justify-content: center;
+  width: 100%;
+  height: calc(100vh - 50px);
+}
+
+.wtq-hero {
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.wtq-title {
+  max-width: 17ch;
+  margin: 0;
+  padding-block: 5px;
+  font-size: clamp(1.5rem, 15vw, 4rem);
+  font-weight: 900;
+  color: transparent;
+  letter-spacing: -0.5px;
+  background: linear-gradient(9deg, hsl(var(--darkest)) 53%, hsl(var(--medium)) 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.wtq-subtitle {
+  max-width: var(--subtitle-width);
+  margin-bottom: 24px;
+  text-wrap: balance;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 500;
+  color: hsl(var(--dark));
+}
+
+.wtq-get-started {
+  display: flex;
+  gap: 1rem;
+}
+@media screen and (width <= 560px) {
+  .wtq-get-started {
+    flex-direction: column;
+  }
+}
+
+/*# sourceMappingURL=home.css.map */
+
+  </style>
+  <link rel="preload" as="image" href={config?.home?.logo?.src}>
+  <section >
+    <main id="main-content" class="wtq-flex-center">
+      <div class="wtq-hero wtq-flex-center">
+        
+      {
+        config?.home?.logo && (
+          <Image
+            loading="eager"
+            src={config?.home?.logo?.src}
+            alt={config?.OGImage?.alt}
+            height={config?.home?.logo?.height}
+            width={config?.home?.logo?.width}
+          />
+        )
+      }
+
+      {config.home?.title && <Dynamic tag={tag} class={className}>{config.home?.title}</Dynamic>}
+
+      {config.home?.subtitle && <Dynamic tag={tag} class={className}>{config.home?.subtitle}</Dynamic>}
+
+      <div class="wtq-get-started">
+        {
+          config.home?.buttons.map((button) => {
+            return (
+              <a
+                
+                href={button.href}
+                class:list={[
+                  "wtq-btn wtq-rounded",
+                  { "wtq-alt": button.type === "alt" },
+                  { "wtq-theme-color": button.type === "primary" },
+                ]}
+              >
+                {button.label}
+              </a>
+            );
+          })
+        }
+      </div>
+    </div>
+
+    </main>
+  </section>
+
+  <slot />
+</BaseLayout>

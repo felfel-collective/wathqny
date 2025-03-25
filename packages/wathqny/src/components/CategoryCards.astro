@@ -1,0 +1,69 @@
+---
+import { getCollection } from 'astro:content'
+
+const docs = await getCollection('docs')
+
+const category = Astro.url.pathname.split('/')[2]
+
+const filteredDocs = docs.filter(
+  (doc: { data: { category: string | undefined } }) => {
+    return doc.data.category === category
+  },
+)
+
+filteredDocs.sort((a, b) =>
+  (a.data.position ?? 0) > (b.data.position ?? 0) ? 1 : -1,
+)
+---
+
+<style>
+  .wtq-card-container-category {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.3rem;
+  margin-top: 30px;
+}
+
+.wtq-card {
+  padding: 25px;
+  background-color: hsl(var(--white));
+  border: 1px solid hsl(var(--light), 0.5);
+  border-radius: calc(var(--radius) * 2);
+}
+.dark .wtq-card {
+  background-color: hsl(var(--light), 0.3);
+  border-color: hsl(var(--lightest));
+}
+.wtq-card:hover {
+  transform: translateY(-5px);
+}
+.wtq-card .wtq-card-title {
+  margin: 0;
+  font-size: var(--font-lg);
+  font-weight: 600;
+  line-height: 1.5;
+  color: hsl(var(--darkest));
+}
+.wtq-card .wtq-card-subtitle {
+  margin: 0;
+  font-size: var(--font-xs);
+  font-weight: 400;
+  color: hsl(var(--dark));
+}
+
+</style>
+
+<div class="wtq-card-container-category">
+  {
+    filteredDocs.map(
+      (doc) => {
+        return (
+          <a href={`/docs/${doc.data.link}`}   class="wtq-card wtq-shadow">
+            <h2 class="wtq-card-title">{doc.data.title}</h2>
+            <h3 class="wtq-card-subtitle">{doc.data.description}</h3>
+          </a>
+        )
+      },
+    )
+  }
+</div>

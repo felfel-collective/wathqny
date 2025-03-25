@@ -6,18 +6,15 @@ const {
   keywords,
   description,
   OGImage,
-  sitemap = "/sitemap-index.xml",
+  sitemap = '/sitemap-index.xml',
   GSVToken,
   robots = 'index, follow',
   extend,
 } = Astro.props as Props
 
 const METATITLE = title
-const METAIMAGE =
-  typeof OGImage?.src === 'object'
-    ? (OGImage?.src as { src: string }).src
-    : OGImage?.src
-const METAIMAGEALT = OGImage?.alt
+const METAIMAGE = typeof OGImage?.src === 'object' ? (OGImage?.src as { src: string }).src: OGImage?.src
+const METAIMAGEALT = OGImage?.alt ?? 'Where is your alt text?'
 const METADESCRIPTION = description
 const METAKEYWORDS = keywords
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)

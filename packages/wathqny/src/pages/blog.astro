@@ -1,0 +1,59 @@
+---
+import { getCollection } from 'astro:content'
+import { For } from 'astro-toolkit/flow'
+import { BlogLayout } from 'wathqny:layouts'
+import PostSummary from '../components/blog/PostSummary.astro'
+
+const blog = await getCollection('blog')
+
+---
+
+<style>
+  .wtq-post-container {
+  display: grid;
+  grid-template-columns: minmax(0, 692px);
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.wtq-post-head {
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.wtq-cover {
+  margin-inline: auto;
+  border: 1px solid hsl(var(--light), 0.5);
+}
+
+.wtq-pagination {
+  justify-content: space-between;
+}
+
+.wtq-pagination__link {
+  margin-top: 1rem;
+  justify-content: space-between;
+}
+
+.wtq-first-arrow {
+  transform: scaleX(-1);
+}
+
+</style>
+
+<BlogLayout>
+  <div class="wtq-post-container">
+    <For each={blog}>
+      {(post: { data: { title: string; image: { src: string; alt: string }; link: string; pubDate: Date }; body: string }, index: number)=> (
+        <PostSummary
+          index={index}
+          title={post.data.title} 
+          image={post.data.image} 
+          link={post.data.link}
+          date={post.data.pubDate} 
+          body={post.body} />
+      )}
+    </For>
+  </div>
+</BlogLayout>

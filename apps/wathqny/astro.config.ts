@@ -1,6 +1,5 @@
 import { defineConfig, passthroughImageService } from 'astro/config';
 import Wathqny from 'wathqny';
-import ThemeStyles from 'wathqny/styles?url'
 
 // https://astro.build/config
 export default defineConfig({
@@ -91,7 +90,7 @@ export default defineConfig({
             },
           ],
         },
-        css: ['/injected-styles.css', ThemeStyles],
+        css: ['/injected-styles.css'],
         // font: '/font/GeistVF.woff2',
       },
     }),

@@ -1,10 +1,9 @@
 ---
 import { Image } from 'astro:assets'
 import config from 'wathqny:config'
-import { MoonSvg,SunSvg } from 'wathqny:assets'
+import { MoonSvg, SunSvg } from 'wathqny:assets'
 
-import Search from '../Search.astro'
-
+import { Search } from 'wathqny:components'
 
 const { logo, siteName, navbar } = config
 ---
@@ -50,7 +49,7 @@ const { logo, siteName, navbar } = config
     </li>
   </ul>
   <script>
-      document.querySelector(".theme-switcher").addEventListener("mouseover", () => import("./navbar-darkmode"))
-      document.querySelector(".wtq-toggle").addEventListener("mouseover", () => import("./navbar-toggle"))
+      document.querySelector(".theme-switcher").addEventListener("mouseover", () => import("./Navigation/navbar-darkmode"))
+      document.querySelector(".wtq-toggle").addEventListener("mouseover", () => import("./Navigation/navbar-darkmode"))
   </script>
 </nav>

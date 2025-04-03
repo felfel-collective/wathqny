@@ -13,15 +13,10 @@
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@shikijs/types": "3.1.0",
-    "@vite-pwa/assets-generator": "^0.2.6",
-    "@vite-pwa/astro": "^0.5.0",
-    "astro": "^5.5.4",
+    "astro": "^5.6.0",
     "astro-toolkit": "workspace:*",
-    "sass": "^1.86.0",
     "sharp": "0.32.6",
-    "sharp-ico": "^0.1.5",
     "typescript": "^5.8.2",
-    "wathqny": "workspace:*",
-    "workbox-window": "^7.3.0"
+    "wathqny": "workspace:*"
   }
 }

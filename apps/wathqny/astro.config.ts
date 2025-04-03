@@ -90,7 +90,6 @@ export default defineConfig({
             },
           ],
         },
-        css: ['/injected-styles.css'],
         // font: '/font/GeistVF.woff2',
       },
     }),

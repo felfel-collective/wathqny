@@ -3,7 +3,6 @@ import { z } from 'astro/zod'
 
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
-import { transformerCopyButton } from '@rehype-pretty/transformers'
 import {
   transformerMetaHighlight,
   transformerMetaWordHighlight,
@@ -13,6 +12,7 @@ import {
   transformerNotationHighlight,
   transformerNotationWordHighlight,
 } from '@shikijs/transformers'
+
 import { minify } from '@zokki/astro-minify'
 import AutoImport from 'astro-auto-import'
 import compressor from 'astro-compressor'
@@ -28,10 +28,6 @@ export const shikiBaseTransformers: ShikiTransformer[] = [
   transformerNotationErrorLevel(),
   transformerNotationHighlight(),
   transformerMetaWordHighlight(),
-  transformerCopyButton({
-    visibility: 'always',
-    feedbackDuration: 3_000,
-  }) as any,
 ]
 
 export default defineTheme({
@@ -52,7 +48,7 @@ export default defineTheme({
           light: 'material-theme-lighter',
           dark: 'material-theme-darker',
         },
-        // transformers: shikiBaseTransformers,
+        transformers: shikiBaseTransformers,
       },
     }),
     sitemap(),

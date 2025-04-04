@@ -1,5 +1,5 @@
 import { defineConfig, passthroughImageService } from 'astro/config';
-import Wathqny from 'wathqny';
+import Wathqny, { shikiBaseTransformers } from 'wathqny';
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,6 +17,7 @@ export default defineConfig({
     svg: true,
     contentIntellisense: true,
     preserveScriptOrder: true,
+    serializeConfig: true,
   },
   markdown: {
     shikiConfig: {
@@ -24,6 +25,7 @@ export default defineConfig({
         light: 'material-theme-lighter',
         dark: 'material-theme-darker',
       },
+      transformers: shikiBaseTransformers,
     },
   },
   integrations: [

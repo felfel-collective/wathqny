@@ -12,7 +12,7 @@ const pagination = usePagination(currentPage, length);
     href={prevUrl}
     class:list={["wtq-pagination__link wtq-flex-center", { disabled: prevUrl }]}
   >
-    <ArrowSvg class="wtq-first-arrow" size={24} />
+    <ArrowSvg class="wtq-first-arrow" width={24} height={24} />
   </a>
   {
     pagination.map((page) =>
@@ -36,6 +36,6 @@ const pagination = usePagination(currentPage, length);
     href={nextUrl}
     class:list={["wtq-pagination__link wtq-flex-center", { disabled: nextUrl }]}
   >
-    <ArrowSvg size={24} />
+    <ArrowSvg width={24} height={24} />
   </a>
 </nav>

@@ -1,14 +1,5 @@
 ---
-import { transformerCopyButton } from '@rehype-pretty/transformers'
-import {
-  transformerMetaHighlight,
-  transformerMetaWordHighlight,
-  transformerNotationDiff,
-  transformerNotationErrorLevel,
-  transformerNotationFocus,
-  transformerNotationHighlight,
-  transformerNotationWordHighlight,
-} from '@shikijs/transformers'
+
 import type {
   BuiltinLanguage,
   BuiltinTheme,
@@ -18,6 +9,7 @@ import type {
   ThemeRegistrationRaw,
 } from 'shiki'
 import { codeToHtml, createHighlighter } from 'shiki'
+import { shikiBaseTransformers } from '../..'
 type themeType = BuiltinTheme | ThemeRegistration | ThemeRegistrationRaw
 
 export interface Props {
@@ -51,19 +43,7 @@ const codeOutput = codeToHtml(code, {
     light: themes.light,
     dark: themes.dark,
   },
-  transformers: [
-    transformerNotationDiff(),
-    transformerNotationFocus(),
-    transformerMetaHighlight(),
-    transformerNotationWordHighlight(),
-    transformerNotationErrorLevel(),
-    transformerNotationHighlight(),
-    transformerMetaWordHighlight(),
-    transformerCopyButton({
-      visibility: 'always',
-      feedbackDuration: 3_000,
-    }),
-  ],
+  // transformers: shikiBaseTransformers
 })
 
 const bgLight = shiki.getTheme(themes.light).bg

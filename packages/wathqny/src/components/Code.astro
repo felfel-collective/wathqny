@@ -1,5 +1,4 @@
 ---
-
 import type {
   BuiltinLanguage,
   BuiltinTheme,
@@ -8,8 +7,7 @@ import type {
   ThemeRegistration,
   ThemeRegistrationRaw,
 } from 'shiki'
-import { codeToHtml, createHighlighter } from 'shiki'
-import { shikiBaseTransformers } from '../..'
+import { createHighlighter } from 'shiki'
 type themeType = BuiltinTheme | ThemeRegistration | ThemeRegistrationRaw
 
 export interface Props {
@@ -29,25 +27,26 @@ const {
     dark: 'material-theme-darker',
   },
 } = Astro.props as Props
-// 'astro-code',
-const shiki = await createHighlighter({
+
+const highlighter = await createHighlighter({
   themes: [themes.light, themes.dark],
   langs: [lang],
 })
 
-const codeOutput = codeToHtml(code, {
-  // name: 'astro-code',
+const bgLight = highlighter.getTheme(themes.light).bg
+const bgDark = highlighter.getTheme(themes.dark).bg
 
+const codeOutput = highlighter.codeToHtml(code, {
+  // name: 'astro-code',
+  cssVariablePrefix: 'astro-code',
   lang: lang as string,
   themes: {
     light: themes.light,
     dark: themes.dark,
   },
-  // transformers: shikiBaseTransformers
 })
 
-const bgLight = shiki.getTheme(themes.light).bg
-const bgDark = shiki.getTheme(themes.dark).bg
+highlighter.dispose()
 ---
 
 <style define:vars={{ bgLight, bgDark }} lang="scss">

@@ -22,8 +22,8 @@ export default defineConfig({
   markdown: {
     shikiConfig: {
       themes: {
-        light: 'material-theme-lighter',
-        dark: 'material-theme-darker',
+        light: 'catppuccin-latte',
+        dark: 'catppuccin-mocha',
       },
       transformers: shikiBaseTransformers,
     },

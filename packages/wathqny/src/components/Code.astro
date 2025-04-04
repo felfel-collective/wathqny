@@ -23,8 +23,8 @@ const {
   code,
   lang = 'plaintext',
   themes = {
-    light: 'material-theme-lighter',
-    dark: 'material-theme-darker',
+    light: 'catppuccin-latte',
+    dark: 'catppuccin-mocha',
   },
 } = Astro.props as Props
 
@@ -38,7 +38,7 @@ const bgDark = highlighter.getTheme(themes.dark).bg
 
 const codeOutput = highlighter.codeToHtml(code, {
   // name: 'astro-code',
-  cssVariablePrefix: 'astro-code',
+  // cssVariablePrefix: '--astro-code-',
   lang: lang as string,
   themes: {
     light: themes.light,

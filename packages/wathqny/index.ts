@@ -45,8 +45,8 @@ export default defineTheme({
       optimize: true,
       shikiConfig: {
         themes: {
-          light: 'material-theme-lighter',
-          dark: 'material-theme-darker',
+          light: 'catppuccin-latte',
+          dark: 'catppuccin-mocha',
         },
         transformers: shikiBaseTransformers,
       },

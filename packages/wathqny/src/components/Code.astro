@@ -37,8 +37,9 @@ const bgLight = highlighter.getTheme(themes.light).bg
 const bgDark = highlighter.getTheme(themes.dark).bg
 
 const codeOutput = highlighter.codeToHtml(code, {
-  // name: 'astro-code',
-  // cssVariablePrefix: '--astro-code-',
+  // name: 'astro-code', 
+
+  cssVariablePrefix: '--shiki-',
   lang: lang as string,
   themes: {
     light: themes.light,

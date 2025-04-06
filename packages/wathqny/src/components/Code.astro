@@ -23,8 +23,8 @@ const {
   code,
   lang = 'plaintext',
   themes = {
-    light: 'catppuccin-latte',
-    dark: 'catppuccin-mocha',
+    light: 'github-light',
+    dark: 'github-dark',
   },
 } = Astro.props as Props
 
@@ -37,9 +37,6 @@ const bgLight = highlighter.getTheme(themes.light).bg
 const bgDark = highlighter.getTheme(themes.dark).bg
 
 const codeOutput = highlighter.codeToHtml(code, {
-  // name: 'astro-code', 
-
-  // cssVariablePrefix: '--shiki-',
   lang: lang as string,
   themes: {
     light: themes.light,
@@ -52,9 +49,9 @@ highlighter.dispose()
 
 <style define:vars={{ bgLight, bgDark }} lang="scss">
   div {
-    --bg: var(--shiki-dark);
+    --bg: var(--bgLight);
     :global(.dark) & {
-      --bg: var(--bgDark);
+      --bg: var(--bgDark) !important;
     }
   }
 </style>

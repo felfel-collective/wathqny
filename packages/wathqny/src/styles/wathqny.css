@@ -304,6 +304,7 @@ h6 {
 
 .wtq-navbar .wtq-toggle-wrapper {
   display: flex;
+  align-items: center;
 }
 
 .dark .wtq-navbar {
@@ -788,9 +789,7 @@ h6 {
 
 .wtq-search-icon {
   position: absolute;
-  top: 0;
-  height: 15px;
-  margin-block: 10px;
+  margin: 10px;
   color: hsl(var(--dark));
 }
 

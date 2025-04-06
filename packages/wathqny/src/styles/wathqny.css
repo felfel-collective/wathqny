@@ -614,11 +614,6 @@ h6 {
   background: var(--bg);
 }
 
-.wtq-code-block .rehype-pretty-copy {
-  top: -10px;
-  inset-inline-end: -20px;
-}
-
 .wtq-code-block pre {
   padding: 0;
   border: 0;
@@ -652,23 +647,13 @@ h6 {
   background-color: #62c554;
 }
 
-.rehype-pretty-copy {
-  top: 5px;
-  border: none;
-  background-color: unset;
-}
-
-.dark .astro-code {
+.dark .shiki, .dark .shiki span {
+  color: var(--shiki-dark) !important;
   background-color: var(--shiki-dark-bg) !important;
-}
-
-.dark .astro-code span {
   font-weight: var(--shiki-dark-font-weight) !important;
   font-style: var(--shiki-dark-font-style) !important;
-  color: var(--shiki-dark) !important;
   text-decoration: var(--shiki-dark-text-decoration) !important;
 }
-
 .line.diff {
   display: inline-block;
   width: 100%;

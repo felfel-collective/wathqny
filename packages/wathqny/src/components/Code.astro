@@ -39,7 +39,7 @@ const bgDark = highlighter.getTheme(themes.dark).bg
 const codeOutput = highlighter.codeToHtml(code, {
   // name: 'astro-code', 
 
-  cssVariablePrefix: '--shiki-',
+  // cssVariablePrefix: '--shiki-',
   lang: lang as string,
   themes: {
     light: themes.light,
@@ -52,9 +52,9 @@ highlighter.dispose()
 
 <style define:vars={{ bgLight, bgDark }} lang="scss">
   div {
-    --bg: var(--bgLight);
+    --bg: var(--shiki-dark);
     :global(.dark) & {
-      --bg: var(--bgDark) !important;
+      --bg: var(--bgDark);
     }
   }
 </style>

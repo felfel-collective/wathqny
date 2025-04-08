@@ -36,10 +36,6 @@
   scrollbar-color: hsl(var(--medium)) hsl(var(--lightest));
 }
 
-@view-transition {
-  navigation: auto;
-}
-
 html {
   font-size: 20px;
   text-size-adjust: none;

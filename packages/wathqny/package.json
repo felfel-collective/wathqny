@@ -31,23 +31,23 @@
     "./actions": "./actions.ts"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.2.3",
+    "@astrojs/mdx": "^4.2.6",
     "@astrojs/rss": "^4.0.11",
-    "@astrojs/sitemap": "^3.3.0",
+    "@astrojs/sitemap": "^3.3.1",
     "@astrojs/ts-plugin": "^1.10.4",
-    "@shikijs/transformers": "^3.2.1",
-    "@shikijs/types": "^3.2.1",
+    "@shikijs/transformers": "^3.4.0",
+    "@shikijs/types": "^3.4.0",
     "@zokki/astro-minify": "^1.1.0",
     "@zokki/astro-purgecss": "^1.0.4",
-    "astro": "^5.6.0",
+    "astro": "^5.7.11",
     "astro-auto-import": "^0.4.4",
     "astro-compressor": "^0.4.1",
     "astro-meta-tags": "^0.3.1",
     "astro-theme-provider": "^0.7.1",
     "astro-toolkit": "workspace:*",
     "purgecss": "^6.0.0",
-    "shiki": "^3.2.1",
-    "typescript": "^5.8.2",
-    "unplugin-auto-import": "^19.1.2"
+    "shiki": "^3.4.0",
+    "typescript": "^5.8.3",
+    "unplugin-auto-import": "^19.2.0"
   }
 }

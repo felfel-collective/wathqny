@@ -14,7 +14,6 @@ export default defineConfig({
     domains: ['api.github.com', 'avatars.githubusercontent.com'],
   },
   experimental: {
-    svg: true,
     contentIntellisense: true,
     preserveScriptOrder: true,
     serializeConfig: true,

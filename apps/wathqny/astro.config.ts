@@ -16,6 +16,7 @@ export default defineConfig({
   experimental: {
     contentIntellisense: true,
     preserveScriptOrder: true,
+    serializeConfig: true,
   },
   markdown: {
     shikiConfig: {

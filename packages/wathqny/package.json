@@ -31,23 +31,23 @@
     "./actions": "./actions.ts"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.2.6",
-    "@astrojs/rss": "^4.0.11",
-    "@astrojs/sitemap": "^3.4.0",
+    "@astrojs/mdx": "^4.3.0",
+    "@astrojs/rss": "^4.0.12",
+    "@astrojs/sitemap": "^3.4.1",
     "@astrojs/ts-plugin": "^1.10.4",
-    "@shikijs/transformers": "^3.4.2",
-    "@shikijs/types": "^3.4.2",
+    "@shikijs/transformers": "^3.8.0",
+    "@shikijs/types": "^3.8.0",
     "@zokki/astro-minify": "^1.1.0",
     "@zokki/astro-purgecss": "^1.0.4",
-    "astro": "^5.7.13",
+    "astro": "^5.11.1",
     "astro-auto-import": "^0.4.4",
-    "astro-compressor": "^0.4.1",
-    "astro-meta-tags": "^0.3.2",
+    "astro-compressor": "^1.0.0",
+    "astro-meta-tags": "^0.4.0",
     "astro-theme-provider": "^0.7.1",
     "astro-toolkit": "workspace:*",
-    "purgecss": "^6.0.0",
-    "shiki": "^3.4.2",
+    "purgecss": "^7.0.2",
+    "shiki": "^3.8.0",
     "typescript": "^5.8.3",
-    "unplugin-auto-import": "^19.2.0"
+    "unplugin-auto-import": "^19.3.0"
   }
 }

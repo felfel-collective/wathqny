@@ -1,6 +1,3 @@
-import defineTheme from 'astro-theme-provider'
-import { z } from 'astro/zod'
-
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import {
@@ -12,12 +9,13 @@ import {
   transformerNotationHighlight,
   transformerNotationWordHighlight,
 } from '@shikijs/transformers'
-
 import { minify } from '@zokki/astro-minify'
+import { purgecss } from '@zokki/astro-purgecss'
+import { z } from 'astro/zod'
 import AutoImport from 'astro-auto-import'
 import compressor from 'astro-compressor'
 import metaTags from 'astro-meta-tags'
-import { purgecss } from '@zokki/astro-purgecss'
+import defineTheme from 'astro-theme-provider'
 import type { ShikiTransformer } from 'shiki'
 
 export const shikiBaseTransformers: ShikiTransformer[] = [
@@ -116,23 +114,25 @@ export default defineTheme({
       .optional(),
     home: z.object({
       title: z.string().optional(),
-      logo: z.object({
-        src: z.string(),
-        alt: z.string(),
-        height: z.number(),
-        width: z.number(),
-      }).optional(),
+      logo: z
+        .object({
+          src: z.string(),
+          alt: z.string(),
+          height: z.number(),
+          width: z.number(),
+        })
+        .optional(),
       subtitle: z.string().optional(),
       description: z.string().optional(),
-      buttons: z.array(
-        z.object({
-          label: z.string(),
-          href: z.string().optional(),
-          type: z.enum(['alt', 'primary']).optional(),
-        })
-      ).length(1),
-    })
+      buttons: z
+        .array(
+          z.object({
+            label: z.string(),
+            href: z.string().optional(),
+            type: z.enum(['alt', 'primary']).optional(),
+          }),
+        )
+        .length(1),
+    }),
   }),
 })
-
-

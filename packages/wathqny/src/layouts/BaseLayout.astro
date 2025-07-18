@@ -21,5 +21,16 @@ const { title, keywords, description, OGImage } = Astro.props as Props
     <div class="wtq-page">
       <slot />
     </div>
+    <script>
+          const links = document.querySelectorAll<HTMLAnchorElement>('a');
+    links.forEach(link => {
+      link.addEventListener("mousedown",() => {
+        const href = link.href;
+        if (href) {
+          window.location.href = href;
+        }
+      })
+    });
+    </script>
   </body>
 </html>

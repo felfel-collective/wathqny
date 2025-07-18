@@ -39,16 +39,7 @@ export default defineTheme({
         },
       ],
     }),
-    mdx({
-      optimize: true,
-      shikiConfig: {
-        themes: {
-          light: 'github-light',
-          dark: 'github-dark',
-        },
-        transformers: shikiBaseTransformers,
-      },
-    }),
+    mdx(),
     sitemap(),
     purgecss(),
 

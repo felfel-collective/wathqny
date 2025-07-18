@@ -520,17 +520,32 @@
   }
 
   .wtq-category-collapse {
-    display: grid;
-    will-change: grid-template-rows;
-    grid-template-rows: 0fr;
+    /* interpolate-size: allow-keywords; */
+    /* transition-behavior: allow-discrete; */
+    display: none;
+    /* opacity: 0; */
+    /* height: 0; */
+    overflow: hidden;
+
+    /* @starting-style {
+      display: grid;
+      opacity: 1;
+      height: auto;
+    } */
+
   }
 
+
+
   .wtq-category-collapse.wtq-active {
-    grid-template-rows: 1fr;
+    display: grid;
+    opacity: 1;
+    height: auto;
+
+
   }
 
   .wtq-collapse-item {
-    will-change: overflow;
     overflow: hidden;
     padding-inline-start: 0.6rem;
   }
@@ -874,6 +889,7 @@
   .wtq-no-motion {
     transition: none 0ms !important;
   }
+
   .wtq-highlight {
     background-color: color-mix(in oklch, var(--medium) 10%, transparent);
     color: var(--darkest);

@@ -872,7 +872,7 @@
   }
 
   .wtq-no-motion {
-    transition: none 0ms;
+    transition: none 0ms !important;
   }
   .wtq-highlight {
     background-color: color-mix(in oklch, var(--medium) 10%, transparent);

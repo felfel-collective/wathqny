@@ -872,9 +872,7 @@ h6 {
 }
 
 .wtq-motion {
-  transition-property: all;
-  transition-duration: 400ms;
-  transition-timing-function: ease;
+
 }
 
 .wtq-highlight {

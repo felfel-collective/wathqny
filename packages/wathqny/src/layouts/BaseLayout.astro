@@ -1,7 +1,7 @@
 ---
 import type { LayoutInterface } from '../components/types/components'
 import { Head, Navbar, SkipLink } from 'wathqny:components'
-import { Prefetch } from 'astro-toolkit/perf'
+import { PrefetchNative } from 'astro-toolkit/perf'
 
 import 'wathqny:styles'
 
@@ -34,7 +34,7 @@ const { title, keywords, description, OGImage } = Astro.props as Props
       })
     });
     </script>
-  <Prefetch />
+  <PrefetchNative />
 
 </body>
 </html>

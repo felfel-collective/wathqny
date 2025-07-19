@@ -29,7 +29,8 @@
       .catch(error => console.error(`Prefetch failed for ${url}:`, error));
   };
 
-  document.querySelectorAll('a[href]').forEach((link: HTMLAnchorElement) => {
+  document.querySelectorAll('a[href]').forEach((value) => {
+    const link = value as HTMLAnchorElement;
     let timer: NodeJS.Timeout | null = null;
 
     link.addEventListener('mouseover', () => {

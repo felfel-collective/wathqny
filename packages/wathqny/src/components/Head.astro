@@ -1,6 +1,6 @@
 ---
 import config from 'wathqny:config'
-import { PrefetchNative } from 'astro-toolkit/perf'
+import { Prefetch } from 'astro-toolkit/perf'
 import { BaseHead } from 'astro-toolkit/seo'
 
 import type { LayoutInterface } from './types/components'
@@ -78,5 +78,5 @@ const METAKEYWORDS = keywords ?? [...(config?.keywords || [])]
   </script>
   <meta name="generator" content="wathqny 1.0 Astro powered" />
   <slot />
-  <PrefetchNative />
+  <Prefetch />
 </BaseHead>

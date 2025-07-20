@@ -32,6 +32,10 @@
     scrollbar-color: var(--light) var(--white);
   }
 
+  /* @view-transition {
+    navigation: auto;
+  } */
+
   html {
     font-size: 20px;
     text-size-adjust: none;

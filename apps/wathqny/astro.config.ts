@@ -33,7 +33,7 @@ export default defineConfig({
         home: {
           logo: {
             src: '/trademark.webp',
-            alt: 'wathqny logo',
+            alt: 'wathqny logo', 
             width: 500,
             height: 278,
           },

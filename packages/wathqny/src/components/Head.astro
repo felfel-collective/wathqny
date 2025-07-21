@@ -35,7 +35,6 @@ const METAKEYWORDS = keywords ?? [...(config?.keywords || [])]
     ],
   }}
 >
-  <meta name="color-scheme" content="dark light" />
   <link rel="icon" type="image/x-icon" href="/icon.svg" />
   {
     config.font ? <style  define:vars={{ wtqfontURL: config.font }}>
@@ -63,18 +62,14 @@ const METAKEYWORDS = keywords ?? [...(config?.keywords || [])]
     }
     </style>}
 
+  <meta name="color-scheme" content="dark light" />
   <script is:inline>
     const root = document.documentElement;
-
-    if (
-      localStorage.theme === "dark" ||
+    const isDark =  localStorage.theme === "dark" ||
       (!("theme" in localStorage) &&
         window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      root?.classList.replace("light", "dark");
-    } else {
-      root?.classList.replace("dark", "light");
-    }
+
+      root?.classList.toggle("dark", isDark);
   </script>
   <meta name="generator" content="wathqny 1.0 Astro powered" />
   <slot />

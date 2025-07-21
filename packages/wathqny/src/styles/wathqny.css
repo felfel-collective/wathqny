@@ -523,36 +523,30 @@
     transform: rotate(-90deg);
   }
 
-  .wtq-category-collapse {
-    /* interpolate-size: allow-keywords; */
-    /* transition-behavior: allow-discrete; */
+  /* .wtq-category-collapse {
+    interpolate-size: allow-keywords;
+    transition-behavior: allow-discrete;
     display: none;
-    /* opacity: 0; */
-    /* height: 0; */
+    opacity: 0;
+    height: 0;
     overflow: hidden;
 
-    /* @starting-style {
+    @starting-style {
       display: grid;
       opacity: 1;
       height: auto;
-    } */
+    }
 
-  }
+  } */
 
 
 
-  .wtq-category-collapse.wtq-active {
+  /* .wtq-category-collapse.wtq-active {
     display: grid;
     opacity: 1;
     height: auto;
+  } */
 
-
-  }
-
-  .wtq-collapse-item {
-    overflow: hidden;
-    padding-inline-start: 0.6rem;
-  }
 
   .wtq-collapse_item--link {
     display: block;
@@ -561,13 +555,15 @@
     color: var(--dark);
   }
 
-  .wtq-category-collapse,
   .wtq-category-toggle {
     user-select: none;
     font-size: 0.875rem;
     font-weight: 600;
     background-color: transparent;
     border: 0;
+  }
+  .wtq-category-container {
+    padding-inline-start: .6rem;
   }
 
   .wtq-collapse-button {
@@ -659,18 +655,12 @@
     background-color: oklch(0.75 0.2 145);
   }
 
-  .dark {
-
-    .astro-code,
-    .shiki,
-    .astro-code span,
-    .shiki span {
-      color: var(--shiki-dark) !important;
-      background-color: var(--shiki-dark-bg) !important;
-      font-weight: var(--shiki-dark-font-weight) !important;
-      font-style: var(--shiki-dark-font-style) !important;
-      text-decoration: var(--shiki-dark-text-decoration) !important;
-    }
+  .dark :is(.astro-code, .shiki, .astro-code span, .shiki span) {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    font-style: var(--shiki-dark-font-style) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
   }
 
   .line.diff {
@@ -715,7 +705,7 @@
   }
 
   .has-focused .line:not(.focused) {
-    filter: blur(0.09rem);
+    filter: blur(5px);
     opacity: 0.5;
   }
 
@@ -866,7 +856,7 @@
   .wtq-focusable:hover,
   .wtq-focusable:focus-visible {
     color: var(--darkest) !important;
-    background-color: var(--medium) / 0.1 !important;
+    background-color: color-mix(in oklch, var(--medium) 10%, transparent) !important;
     outline: none !important;
     cursor: pointer;
   }
@@ -884,9 +874,7 @@
     align-items: center;
   }
 
-  .wtq-motion {
-
-  }
+  .wtq-motion {}
 
   .wtq-no-motion {
     transition: none 0ms !important;

@@ -591,6 +591,7 @@
 
   .wtq-avatar {
     border-radius: 50%;
+    aspect-ratio: 1/1;
   }
 
   @media screen and (width <=868px) {
@@ -747,6 +748,7 @@
   .wtq-page {
     content-visibility: auto;
     contain-intrinsic-size: 1000px;
+    contain: paint;
     display: flex;
     height: 100%;
   }

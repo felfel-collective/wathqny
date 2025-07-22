@@ -14,7 +14,6 @@ const { title, keywords, description, OGImage } = Astro.props as Props
   xml:lang={Astro.currentLocale}
   lang={Astro.currentLocale}
   dir={Astro.currentLocale === 'ar' ? 'rtl' : 'ltr'}
-  class="light"
 >
   <Head {title} {keywords} {description} {OGImage} />
   <body>
@@ -24,7 +23,7 @@ const { title, keywords, description, OGImage } = Astro.props as Props
       <slot />
     </div>
     <script>
-          const links = document.querySelectorAll<HTMLAnchorElement>('a');
+    const links = document.querySelectorAll<HTMLAnchorElement>('a');
     links.forEach(link => {
       link.addEventListener("mousedown",() => {
         const href = link.href;
@@ -34,7 +33,7 @@ const { title, keywords, description, OGImage } = Astro.props as Props
       })
     });
     </script>
-  <PrefetchNative />
+    <PrefetchNative />
 
 </body>
 </html>

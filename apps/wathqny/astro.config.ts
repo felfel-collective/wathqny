@@ -18,13 +18,15 @@ export default defineConfig({
     preserveScriptOrder: true,
   },
   markdown: {
-    shikiConfig: {
-      themes: {
-        light: 'github-light',
-        dark: 'github-dark',
-      },
-      transformers: shikiBaseTransformers,
-    },
+    syntaxHighlight: false,    
+    // shikiConfig: {
+
+    //   themes: {
+    //     light: 'github-light',
+    //     dark: 'github-dark',
+    //   },
+    //   transformers: shikiBaseTransformers,
+    // },
   },
   integrations: [
     Wathqny({

@@ -41,7 +41,9 @@ export default defineTheme({
     }),
     mdx(),
     sitemap(),
-    purgecss(),
+    purgecss({
+      logAllFiles: false,
+    }),
 
     metaTags(),
     minify({

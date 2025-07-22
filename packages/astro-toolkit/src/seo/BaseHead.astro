@@ -24,6 +24,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{METATITLE}</title>
+  <link rel="preload" href="/wathqny.css" as="style"> 
+  <link rel="stylesheet" href="/wathqny.css">
 
   {
     extend?.link?.map((linkTag) => (

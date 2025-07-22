@@ -31,7 +31,13 @@ const METAKEYWORDS = keywords ?? [...(config?.keywords || [])]
         type: "font/woff2",
         crossorigin: "anonymous",
       },
-      ...config?.css ?? [],
+      {
+        href: config?.css,
+        rel: "preload",
+        as: "stylesheet",
+        type: "css/text",
+        crossorigin: "anonymous",
+      },
     ],
   }}
 >
@@ -65,11 +71,9 @@ const METAKEYWORDS = keywords ?? [...(config?.keywords || [])]
   <meta name="color-scheme" content="dark light" />
   <script is:inline>
     const root = document.documentElement;
-    const isDark =  localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    const isDark =  localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
 
-      root?.classList.toggle("dark", isDark);
+    root?.classList.toggle("dark", isDark);
   </script>
   <meta name="generator" content="wathqny 1.0 Astro powered" />
   <slot />

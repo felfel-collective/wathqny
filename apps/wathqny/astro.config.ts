@@ -1,5 +1,6 @@
 import { defineConfig, passthroughImageService } from 'astro/config';
 import Wathqny, { shikiBaseTransformers } from 'wathqny';
+// import wathqnyStyles from "./wathqny.css?url"
 
 // https://astro.build/config
 export default defineConfig({
@@ -92,6 +93,7 @@ export default defineConfig({
             },
           ],
         },
+        // css: ["/wathqny.css"],
         // font: '/font/GeistVF.woff2',
       },
     }),

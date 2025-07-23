@@ -10,7 +10,7 @@ import {
   transformerNotationWordHighlight,
 } from '@shikijs/transformers'
 import { minify } from '@zokki/astro-minify'
-import { purgecss } from '@zokki/astro-purgecss'
+// import { purgecss } from '@zokki/astro-purgecss'
 import { z } from 'astro/zod'
 import AutoImport from 'astro-auto-import'
 import compressor from 'astro-compressor'
@@ -41,9 +41,9 @@ export default defineTheme({
     }),
     mdx(),
     sitemap(),
-    purgecss({
-      logAllFiles: false,
-    }),
+    // purgecss({
+    //   logAllFiles: false,
+    // }),
 
     metaTags(),
     minify({

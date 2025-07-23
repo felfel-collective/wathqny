@@ -16,10 +16,25 @@ export default defineConfig({
   },
   experimental: {
     contentIntellisense: true,
-    preserveScriptOrder: true,
+    // preserveScriptOrder: true,
+    fonts: [
+      {
+        provider: "local",
+        name: "family",
+        cssVariable: "--font-family",
+        variants: [
+          {
+            display: "optional",
+            weight: "100 900",
+            style: "normal",
+            src: ["./src/assets/font/GeistVF.woff2"],
+          },
+        ],
+      },
+    ],
   },
   markdown: {
-    syntaxHighlight: false,    
+    syntaxHighlight: false,
     // shikiConfig: {
 
     //   themes: {
@@ -29,6 +44,7 @@ export default defineConfig({
     //   transformers: shikiBaseTransformers,
     // },
   },
+
   integrations: [
     Wathqny({
       config: {
@@ -36,7 +52,7 @@ export default defineConfig({
         home: {
           logo: {
             src: '/trademark.webp',
-            alt: 'wathqny logo', 
+            alt: 'wathqny logo',
             width: 500,
             height: 278,
           },

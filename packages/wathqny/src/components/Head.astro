@@ -42,11 +42,7 @@ const METAKEYWORDS = keywords ?? [...(config?.keywords || [])]
   }}
 >
   <link rel="icon" type="image/x-icon" href="/icon.svg" /> 
-  <meta name="color-scheme" content="dark light" />
-  <script is:inline>
-    const root = document.documentElement;
-    localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches) && (root?.classList.add("dark"))
-  </script>
   <meta name="generator" content="wathqny 1.0 Astro powered" />
+  <meta name="color-scheme" content="dark light" />
   <slot />
 </BaseHead>

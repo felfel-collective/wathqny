@@ -623,8 +623,8 @@
   .wtq-code-block {
     overflow-x: auto;
     background: var(--bg);
+    --bg: light-dark(var(--bgLight), var(--bgDark)) !important;
   }
-
   .wtq-code-block pre {
     padding: 0;
     border: 0;

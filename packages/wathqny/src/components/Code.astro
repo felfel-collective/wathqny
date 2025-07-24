@@ -47,16 +47,7 @@ const codeOutput = highlighter.codeToHtml(code, {
 highlighter.dispose()
 ---
 
-<style define:vars={{ bgLight, bgDark }} lang="scss">
-  div {
-    --bg: var(--bgLight);
-    :global(.dark) & {
-      --bg: var(--bgDark) !important;
-    }
-  }
-</style>
-
-<div class="wtq-app-block wtq-code-block wtq-rounded">
+<div  style={{ "--bgLight": bgLight, "--bgDark": bgDark }} class="wtq-app-block wtq-code-block wtq-rounded">
   <div class="head">
     <span class="dot"></span>
     <span class="dot"></span>

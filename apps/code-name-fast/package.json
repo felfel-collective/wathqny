@@ -11,10 +11,10 @@
   "dependencies": {
     "@astrojs/solid-js": "^5.1.0",
     "@tailwindcss/vite": "^4.1.11",
-    "astro": "^5.12.7",
+    "astro": "^5.12.8",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "solid-js": "^1.9.7",
+    "solid-js": "^1.9.8",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.11"
   }

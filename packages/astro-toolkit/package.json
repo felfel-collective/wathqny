@@ -59,7 +59,7 @@
   },
   "devDependencies": {
     "@astrojs/ts-plugin": "^1.10.4",
-    "astro": "^5.12.8",
+    "astro": "^5.12.9",
     "typescript": "^5.9.2"
   }
 }

@@ -39,7 +39,7 @@
     "@shikijs/types": "^3.9.2",
     "@zokki/astro-minify": "^1.1.0",
     "@zokki/astro-purgecss": "^1.0.4",
-    "astro": "^5.12.8",
+    "astro": "^5.12.9",
     "astro-auto-import": "^0.4.4",
     "astro-compressor": "^1.1.2",
     "astro-meta-tags": "^0.4.0",

@@ -13,7 +13,7 @@
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@shikijs/types": "3.1.0",
-    "astro": "^5.12.9",
+    "astro": "^5.13.2",
     "astro-toolkit": "workspace:*",
     "sass": "^1.90.0",
     "sharp": "0.32.6",

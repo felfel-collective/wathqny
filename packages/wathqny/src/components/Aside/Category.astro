@@ -12,11 +12,9 @@ interface Props {
 const { name, href, isActive, key } = Astro.props
 ---
 
-<li role="tab" class="wtq-category_collapse--wrapper" class:list={{ 'wtq-active': isActive }}>
-  <CategoryToggle key={key} name={name} />
-  <ul class="wtq-category-collapse wtq-rounded wtq-motion" class:list={{ 'wtq-active': isActive }}>
-    <li class="wtq-collapse-item">
-      {href ? <LinkItem href={href} name={name} /> : <slot /> }
-    </li>
-  </ul>
+<li role="tab">
+  <details open={isActive}>
+  <summary class="wtq-focusable wtq-flex-center wtq-rounded wtq-category-toggle wtq-rounded" class:list={{ 'wtq-active': isActive }}>{name}</summary>
+  <div class="wtq-category-container">{href ? <LinkItem href={href} name={name} /> : <slot /> }</div>
+</details>
 </li>

@@ -6,3 +6,7 @@ onlyBuiltDependencies:
   - '@parcel/watcher'
   - esbuild
   - sharp
+
+catalog:
+  vite: 'npm:rolldown-vite@latest'
+  vitest: '@latest'

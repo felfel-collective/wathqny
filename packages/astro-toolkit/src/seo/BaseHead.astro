@@ -1,4 +1,5 @@
 ---
+import { Font } from 'astro:assets'
 import type { Props } from '../types'
 
 const {
@@ -24,7 +25,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{METATITLE}</title>
-
+  <script is:inline>
+    const root = document.documentElement;
+    localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches) && (root?.classList.add("dark"))
+  </script>
+  <Font cssVariable="--font-family" preload />
   {
     extend?.link?.map((linkTag) => (
       typeof linkTag == 'object' ? <link {...linkTag} /> : <link rel="stylesheet" href={linkTag} />

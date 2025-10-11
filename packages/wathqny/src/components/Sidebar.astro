@@ -25,22 +25,16 @@ const currentUrl = `/${
 ---
 
 <div class="wtq-sidebar-overlay" aria-hidden></div>
-<aside class="wtq-sidebar wtq-motion">
+<aside class="wtq-sidebar">
   <ul class="wtq-sidebar-category" role="tablist">
     <For each={config.sidebar}>
       {
-        (item: { label: string, id: any }, index) => (
+        (item, index) => (
           <Category
             key={index}
             name={item.label}
             isActive={docs.some(
-              (doc: {
-                data: {
-                  href: string
-                  title: string | undefined
-                  category: any
-                }
-              }) => {
+              (doc) => {
                 const documentLink
                   = doc.data.href ?? `/${slugify(doc.data.title)}`
                 return (

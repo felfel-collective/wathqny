@@ -1,0 +1,26 @@
+---
+import '~/styles/global.css' 
+import {ABTestPreview} from "~/components/ABTestPreview"
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+    <div class="container px-5 mx-auto">
+
+		<h1 class="text-3xl font-bold my-4">
+
+      A B testing
+    </h1>
+
+      <ABTestPreview client:only  />
+    </div>
+
+    </body>
+</html>

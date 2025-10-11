@@ -1,5 +1,6 @@
 import { defineConfig, passthroughImageService } from 'astro/config';
 import Wathqny, { shikiBaseTransformers } from 'wathqny';
+// import wathqnyStyles from "./wathqny.css?url"
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,18 +16,35 @@ export default defineConfig({
   },
   experimental: {
     contentIntellisense: true,
-    preserveScriptOrder: true,
-    serializeConfig: true,
+    // preserveScriptOrder: true,
+    fonts: [
+      {
+        provider: "local",
+        name: "family",
+        cssVariable: "--font-family",
+        variants: [
+          {
+            display: "optional",
+            weight: "100 900",
+            style: "normal",
+            src: ["./src/assets/font/GeistVF.woff2"],
+          },
+        ],
+      },
+    ],
   },
   markdown: {
-    shikiConfig: {
-      themes: {
-        light: 'github-light',
-        dark: 'github-dark',
-      },
-      transformers: shikiBaseTransformers,
-    },
+    syntaxHighlight: false,
+    // shikiConfig: {
+
+    //   themes: {
+    //     light: 'github-light',
+    //     dark: 'github-dark',
+    //   },
+    //   transformers: shikiBaseTransformers,
+    // },
   },
+
   integrations: [
     Wathqny({
       config: {
@@ -91,6 +109,7 @@ export default defineConfig({
             },
           ],
         },
+        // css: ["/wathqny.css"],
         // font: '/font/GeistVF.woff2',
       },
     }),

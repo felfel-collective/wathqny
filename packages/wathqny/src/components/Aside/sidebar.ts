@@ -12,9 +12,9 @@ const toggle = document.querySelector('.wtq-nav-menu') as HTMLElement
 
 function sidebarShrinkAndLock() {
   const showSidebar = sidebar?.classList.contains('wtq-show')
-  sidebarOverlay.classList.toggle('wtq-show', showSidebar)
-  sidebar?.classList.toggle('wtq-show', showSidebar)
-  document.body.style.overflow = showSidebar ? 'hidden' : ''
+  sidebarOverlay.classList.toggle('wtq-show', !showSidebar)
+  sidebar?.classList.toggle('wtq-show', !showSidebar)
+  document.body.style.overflow = showSidebar ? '' : 'hidden'
 }
 
 toggle?.addEventListener('click', sidebarShrinkAndLock)

@@ -26,8 +26,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{METATITLE}</title>
   <script is:inline>
-    const root = document.documentElement;
-    localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches) && (root?.classList.add("dark"))
+    localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches) && (document.documentElement?.classList.add("dark"))
   </script>
   <Font cssVariable="--font-family" preload />
   {

@@ -16,7 +16,7 @@ export default defineConfig({
   },
   experimental: {
     contentIntellisense: true,
-    // preserveScriptOrder: true,
+    preserveScriptOrder: true,
     fonts: [
       {
         provider: "local",

@@ -13,11 +13,11 @@
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@shikijs/types": "3.1.0",
-    "astro": "^5.13.2",
+    "astro": "^5.14.5",
     "astro-toolkit": "workspace:*",
-    "sass": "^1.90.0",
+    "sass": "^1.93.2",
     "sharp": "0.32.6",
-    "typescript": "^5.9.2",
+    "typescript": "^5.9.3",
     "wathqny": "workspace:*"
   }
 }

@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.2.7",
   "private": true,
-  "packageManager": "pnpm@10.14.0",
+  "packageManager": "pnpm@10.18.3",
   "scripts": {
     "dev": "turbo run dev",
     "serve": "turbo run serve",
@@ -14,8 +14,8 @@
     "turbo": "latest"
   },
   "dependencies": {
-    "@biomejs/biome": "^2.2.0",
-    "@changesets/cli": "^2.29.5",
+    "@biomejs/biome": "^2.2.6",
+    "@changesets/cli": "^2.29.7",
     "@vitest/coverage-v8": "^3.2.4",
     "vitest": "^3.2.4"
   },

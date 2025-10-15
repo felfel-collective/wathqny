@@ -14,12 +14,9 @@
     --lightest: light-dark(oklch(96.74% 0.0013 286.38), oklch(21.03% 0.0059 285.89));
     --white: light-dark(oklch(100% 0 0), oklch(21.03% 0.0059 285.89));
     --black: light-dark(oklch(21.03% 0.0059 285.89), oklch(100% 0 0));
-  }
-
-  .light {
     color-scheme: light;
   }
-
+  
   .dark {
     color-scheme: dark;
   }
@@ -623,8 +620,8 @@
   .wtq-code-block {
     overflow-x: auto;
     background: var(--bg);
-    --bg: light-dark(var(--bgLight), var(--bgDark)) !important;
   }
+
   .wtq-code-block pre {
     padding: 0;
     border: 0;

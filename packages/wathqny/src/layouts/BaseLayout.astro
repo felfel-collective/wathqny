@@ -10,8 +10,6 @@ export interface Props extends LayoutInterface {}
 const { title, keywords, description, OGImage } = Astro.props as Props
 ---
 
-
-
 <html
   xml:lang={Astro.currentLocale}
   lang={Astro.currentLocale}
@@ -35,7 +33,6 @@ const { title, keywords, description, OGImage } = Astro.props as Props
       })
     });
     </script>
-    <PrefetchNative />
-
+    <!-- <PrefetchNative /> -->
 </body>
 </html>

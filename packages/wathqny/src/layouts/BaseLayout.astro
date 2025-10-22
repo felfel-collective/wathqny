@@ -23,8 +23,9 @@ const { title, keywords, description, OGImage } = Astro.props as Props
       <slot />
     </div>
     <script>
-    const links = document.querySelectorAll<HTMLAnchorElement>('a');
-    links.forEach(link => {
+      const links = document.querySelectorAll<HTMLAnchorElement>('a');
+
+      links.forEach(link => {
       link.addEventListener("mousedown",() => {
         const href = link.href;
         if (href) {
